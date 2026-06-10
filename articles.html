@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="RotorFiles Articles - Free knowledge articles on agriculture, psychology, leadership, technology, and education. Multi-author wisdom library.">
+    <meta name="keywords" content="articles, knowledge, agriculture, leadership, psychology, technology, education, RotorFiles">
+    <meta name="author" content="RotorFiles Foundation">
+    <title>Articles Library | RotorFiles Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-body: #F8F9FC;
+            --bg-surface: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #1A1F36;
+            --text-secondary: #4A5568;
+            --text-muted: #718096;
+            --text-inverse: #0A0C0F;
+            --border-light: #E2E8F0;
+            --accent-gold: #C9A03D;
+            --accent-gold-dark: #A67C2E;
+            --accent-green: #2A9D8F;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 32px rgba(0, 0, 0, 0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 9999px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+        }
+
+        body.dark {
+            --bg-body: #0A0C0F;
+            --bg-surface: #11151A;
+            --bg-card: #161C22;
+            --bg-tertiary: #0f1419;
+            --text-primary: #F5F7FA;
+            --text-secondary: #B0B8C5;
+            --text-muted: #8A95A5;
+            --text-inverse: #F5F7FA;
+            --border-light: #232A33;
+            --accent-gold: #E8B86B;
+            --accent-gold-dark: #D4A34A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.5;
+            transition: background var(--transition-normal), color var(--transition-normal);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            transition: var(--transition-fast);
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--accent-gold);
+            color: var(--text-inverse);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .theme-toggle,
+        .mobile-menu-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            transition: var(--transition-fast);
+        }
+
+        .theme-toggle:hover,
+        .mobile-menu-btn:hover {
+            background: var(--accent-gold);
+            color: var(--text-inverse);
+            border-color: var(--accent-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* Hero Section */
+        .articles-hero {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, var(--accent-gold-light, rgba(201,160,61,0.1)), transparent);
+        }
+
+        .articles-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .articles-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Search & Filters */
+        .search-section {
+            margin: 32px 0 24px;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            display: block;
+            padding: 14px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(201, 160, 61, 0.1);
+        }
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 24px 0 32px;
+        }
+
+        .category-btn {
+            padding: 8px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--accent-gold);
+            color: var(--text-inverse);
+            border-color: var(--accent-gold);
+        }
+
+        /* Articles Grid */
+        .section-title {
+            margin: 40px 0 24px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+            margin-bottom: 60px;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-gold);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform var(--transition-normal);
+        }
+
+        .article-card:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .card-img-wrapper {
+            overflow: hidden;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-category {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--text-inverse);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 12px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-weight: 500;
+        }
+
+        .page-btn:hover,
+        .page-btn.active {
+            background: var(--accent-gold);
+            color: var(--text-inverse);
+            border-color: var(--accent-gold);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-surface);
+            border-radius: var(--radius-xl);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: var(--bg-surface);
+            z-index: 10;
+        }
+
+        .modal-header h2 {
+            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition-fast);
+        }
+
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Article Content Styling */
+        .article-full h1 {
+            font-size: 2rem;
+            margin: 16px 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .article-full .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+
+        .article-full .featured-image {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            margin: 20px 0;
+        }
+
+        .article-full .article-body {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .article-full .article-body h2 {
+            font-size: 1.5rem;
+            margin: 24px 0 12px;
+            color: var(--accent-gold);
+        }
+
+        .article-full .article-body h3 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px;
+        }
+
+        .article-full .article-body p {
+            margin-bottom: 16px;
+        }
+
+        .article-full .article-body .pull-quote {
+            border-left: 4px solid var(--accent-gold);
+            padding: 16px 24px;
+            margin: 24px 0;
+            font-style: italic;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+        }
+
+        .article-full .article-body .highlight-box {
+            background: var(--accent-gold-light, rgba(201,160,61,0.1));
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            margin: 20px 0;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .author-bio {
+            margin-top: 32px;
+            padding: 20px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .author-bio img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-light);
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-light);
+            padding: 48px 0 32px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 2;
+            font-size: 0.85rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 20px;
+            }
+            .articles-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-surface);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+                z-index: 999;
+                border-bottom: 1px solid var(--border-light);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .articles-hero {
+                padding: 40px 0 30px;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .card-title {
+                font-size: 1.1rem;
+            }
+            
+            .category-filters {
+                gap: 8px;
+            }
+            
+            .category-btn {
+                padding: 6px 14px;
+                font-size: 0.75rem;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .article-full h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .card-meta {
+                gap: 10px;
+                font-size: 0.7rem;
+            }
+            
+            .author-bio {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="https://i.postimg.cc/1tVwCzJf/logo-png.jpg" alt="RotorFiles Foundation" class="logo-img">
+                    <div class="logo-text">
+                        <h1>RotorFiles Foundation</h1>
+                        <p>FREE WISDOM FOR ALL</p>
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="articles.html" class="active">Articles</a></li>
+                    <li><a href="kilimochap.html">KilimoChap</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="articles-hero">
+            <div class="container">
+                <h1>📚 Knowledge Library</h1>
+                <p>Free articles on agriculture, psychology, leadership, technology, and education from expert contributors worldwide.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Search Section -->
+            <div class="search-section">
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search articles by title, author, or topic...">
+            </div>
+
+            <!-- Category Filters -->
+            <div class="category-filters" id="categoryFilters">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="KILIMOCHAP">🌱 KilimoChap</button>
+                <button class="category-btn" data-category="PSYCHOLOGY">🧠 Psychology</button>
+                <button class="category-btn" data-category="LEADERSHIP">👑 Leadership</button>
+                <button class="category-btn" data-category="TECHNOLOGY">💡 Technology</button>
+                <button class="category-btn" data-category="EDUCATION">📚 Education</button>
+            </div>
+
+            <!-- Articles Grid -->
+            <div id="articlesGridContainer" class="articles-grid">
+                <!-- Dynamic cards will appear here -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </main>
+
+    <!-- Article Modal -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Article</h2>
+                <button class="modal-close" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://i.postimg.cc/1tVwCzJf/logo-png.jpg" alt="RotorFiles" style="width: 50px; border-radius: 12px; margin-bottom: 16px;">
+                    <h3 style="color: var(--accent-gold); font-size: 1.2rem;">RotorFiles Foundation</h3>
+                    <p>Free Wisdom for All</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="books.html">Books</a></p>
+                    <p><a href="articles.html">Articles</a></p>
+                    <p><a href="kilimochap.html">KilimoChap</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="support.html">Support</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+255650222824">+255 650 222 824</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/255610222824" target="_blank">+255 610 222 824</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:emmanuelbrayson24@gmail.com">foundation@rotorfiles.org</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <p><a href="#"><i class="fab fa-twitter"></i> Twitter</a></p>
+                    <p><a href="#"><i class="fab fa-facebook"></i> Facebook</a></p>
+                    <p><a href="#"><i class="fab fa-instagram"></i> Instagram</a></p>
+                    <p><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RotorFiles Foundation — Free Wisdom for All. Empowering multiple voices.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Article Database
+        const defaultArticles = [
+            {
+                id: "art1",
+                title: "How To Grow Maize Successfully: A Complete Guide",
+                author: "Emmanuel Brayson Mushi",
+                authorAvatar: "https://i.postimg.cc/FFdCJ8BZ/Emmanuel-Brayson-Mushi.png",
+                authorBio: "Founder of RotorFiles Foundation, agri-innovator.",
+                category: "KILIMOCHAP",
+                categoryDisplay: "🌱 KilimoChap",
+                featuredImage: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800",
+                readTime: 8,
+                publishDate: "2026-06-10",
+                excerpt: "Master maize farming with proven agronomic tips from seed selection to pest control. Increase your harvest with these expert techniques.",
+                bodyHTML: `<p>Maize is the backbone of African food security. This guide explores land prep, seed selection, and pest control.</p>
+                <h2>Land Preparation</h2><p>Plow 2-3 weeks before planting. Minimum tillage preserves moisture and soil structure. Maintain soil pH between 5.8-6.8 for optimal growth.</p>
+                <div class="pull-quote">"Healthy soil equals abundant harvest. Invest in soil health for long-term productivity."</div>
+                <h2>Seed Selection</h2><p>Use certified drought-tolerant hybrids like DK777 or local adapted varieties. Plant at the onset of rains for best germination.</p>
+                <div class="highlight-box">💡 Pro Tip: Rotate maize with legumes to naturally fix nitrogen in the soil and reduce fertilizer costs.</div>
+                <h2>Pest & Disease Management</h2><p>Monitor for fall armyworm weekly. Use integrated pest management combining biological controls and targeted pesticide application only when thresholds are reached.</p>
+                <h2>Harvesting & Storage</h2><p>Harvest when grain moisture is below 20%. Dry properly to below 13% moisture before storage to prevent aflatoxin contamination.</p>`
+            },
+            {
+                id: "art2",
+                title: "The Psychology of Resilient Leadership",
+                author: "Dr. Amina J. Kimathi",
+                authorAvatar: "https://randomuser.me/api/portraits/women/68.jpg",
+                authorBio: "Organizational psychologist & leadership coach. TEDx speaker.",
+                category: "LEADERSHIP",
+                categoryDisplay: "👑 Leadership",
+                featuredImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+                readTime: 6,
+                publishDate: "2026-05-22",
+                excerpt: "Discover mental frameworks that help leaders thrive under pressure and inspire teams to achieve extraordinary results.",
+                bodyHTML: `<p>Resilience isn't just grit; it's a skill that can be developed. Learn how cognitive reappraisal and psychological safety create high-performing teams.</p>
+                <h2>Emotional Agility</h2><p>Leaders who acknowledge emotions without being controlled by them foster trust and psychological safety within their teams.</p>
+                <div class="pull-quote">"Between stimulus and response there is a space. In that space is our power to choose our response." — Viktor Frankl</div>
+                <h2>Practical Resilience Tools</h2><p>Daily mindfulness practice, peer coaching circles, and structured debrief rituals significantly reduce burnout and improve decision-making under pressure.</p>
+                <div class="highlight-box">🎯 Action Step: Start each team meeting with a 2-minute mindfulness exercise to center focus and reduce reactivity.</div>`
+            },
+            {
+                id: "art3",
+                title: "Agroecology: Farming with Nature",
+                author: "Grace Mwende",
+                authorAvatar: "https://randomuser.me/api/portraits/women/45.jpg",
+                authorBio: "Agroecology specialist, regenerative farmer from Kenya.",
+                category: "KILIMOCHAP",
+                categoryDisplay: "🌱 KilimoChap",
+                featuredImage: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800",
+                readTime: 7,
+                publishDate: "2026-05-15",
+                excerpt: "Regenerative practices that restore soil, increase yields, and capture carbon while reducing input costs.",
+                bodyHTML: `<p>Agroecology mimics natural ecosystems. Polycultures, composting, and water harvesting work together to create resilient farming systems.</p>
+                <h2>Composting Techniques</h2><p>Turn crop residues and livestock manure into black gold. Quality compost reduces synthetic fertilizer dependency by up to 50%.</p>
+                <div class="highlight-box">🌿 Research shows: Farmer-led trials show 40% higher yields after 3 seasons of agroecological practices.</div>
+                <h2>Water Conservation</h2><p>Mulching reduces evaporation by up to 70% and suppresses weeds organically. Combine with contour planting to capture rainfall.</p>`
+            },
+            {
+                id: "art4",
+                title: "Digital Tools for Smallholder Farmers",
+                author: "James Ochieng",
+                authorAvatar: "https://randomuser.me/api/portraits/men/32.jpg",
+                authorBio: "AgriTech entrepreneur, founder of FarmSmart Hub.",
+                category: "TECHNOLOGY",
+                categoryDisplay: "💡 Technology",
+                featuredImage: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800",
+                readTime: 5,
+                publishDate: "2026-06-01",
+                excerpt: "Affordable apps, satellite data, and mobile advisory services that transform farm management and increase profits.",
+                bodyHTML: `<p>From weather forecasts to pest alerts, digital inclusion is reshaping African agriculture. Even basic phones can access valuable information.</p>
+                <h2>Mobile Advisory Services</h2><p>Platforms like iShamba and DigiFarm provide real-time tips via SMS in local languages. Farmers report 30% yield increases after subscribing.</p>
+                <div class="pull-quote">"Knowledge at your fingertips is the most powerful tool a farmer can have."</div>
+                <h2>Satellite Crop Monitoring</h2><p>Low-cost satellite imagery helps detect crop stress before it's visible to the naked eye, allowing early intervention.</p>`
+            },
+            {
+                id: "art5",
+                title: "Emotional Intelligence in Community Building",
+                author: "Sarah Ndlovu",
+                authorAvatar: "https://randomuser.me/api/portraits/women/90.jpg",
+                authorBio: "Community organizer, conflict resolution facilitator.",
+                category: "PSYCHOLOGY",
+                categoryDisplay: "🧠 Psychology",
+                featuredImage: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800",
+                readTime: 9,
+                publishDate: "2026-05-28",
+                excerpt: "How empathy and active listening strengthen collective action and reduce social friction in diverse communities.",
+                bodyHTML: `<p>In diverse communities, emotional intelligence bridges cultural gaps and fosters genuine solidarity. Learn practical frameworks for inclusive leadership.</p>
+                <h2>Active Listening Practices</h2><p>Reflective listening transforms disputes into dialogues. The key is to listen without planning your response while the other person speaks.</p>
+                <div class="highlight-box">🤝 RotorFiles community initiatives apply EI frameworks in rural workshops with measurable improvements in group cohesion.</div>
+                <h2>Self-Regulation Strategies</h2><p>Managing emotional triggers before they escalate conflicts is a learned skill. Practice the 6-second pause before responding to heated comments.</p>`
+            }
+        ];
+
+        let articles = [];
+        let currentPage = 1;
+        let currentFilter = "all";
+        let currentSearch = "";
+        const articlesPerPage = 6;
+
+        function loadArticles() {
+            const stored = localStorage.getItem("rotorfiles_articles");
+            if (stored) {
+                articles = JSON.parse(stored);
+            } else {
+                articles = defaultArticles;
+                saveToLocal();
+            }
+        }
+
+        function saveToLocal() {
+            localStorage.setItem("rotorfiles_articles", JSON.stringify(articles));
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return "Unknown date";
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+
+        function renderArticles() {
+            let filtered = articles.filter(article => {
+                const matchesFilter = currentFilter === "all" || article.category === currentFilter;
+                const matchesSearch = article.title.toLowerCase().includes(currentSearch) || 
+                                     article.author.toLowerCase().includes(currentSearch);
+                return matchesFilter && matchesSearch;
+            });
+            
+            const totalPages = Math.ceil(filtered.length / articlesPerPage);
+            const start = (currentPage - 1) * articlesPerPage;
+            const pageArticles = filtered.slice(start, start + articlesPerPage);
+            
+            const grid = document.getElementById("articlesGridContainer");
+            if (pageArticles.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-book-open"></i>
+                        <h3>No articles found</h3>
+                        <p style="color: var(--text-muted);">Try adjusting your search or filter criteria</p>
+                    </div>
+                `;
+                document.getElementById("pagination").innerHTML = "";
+                return;
+            }
+            
+            grid.innerHTML = pageArticles.map(art => `
+                <div class="article-card" data-id="${art.id}">
+                    <div class="card-img-wrapper">
+                        <img src="${art.featuredImage || 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800'}" class="card-img" alt="${escapeHtml(art.title)}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">${art.categoryDisplay || art.category}</span>
+                        <h3 class="card-title">${escapeHtml(art.title)}</h3>
+                        <div class="card-meta">
+                            <span><i class="fas fa-user"></i> ${escapeHtml(art.author)}</span>
+                            <span><i class="fas fa-calendar"></i> ${formatDate(art.publishDate)}</span>
+                            <span><i class="fas fa-clock"></i> ${art.readTime} min</span>
+                        </div>
+                        <p class="card-excerpt">${escapeHtml(art.excerpt.substring(0, 120))}...</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Attach click listeners
+            document.querySelectorAll('.article-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const id = card.getAttribute('data-id');
+                    openArticleModal(id);
+                });
+            });
+            
+            // Render pagination
+            let pagesHtml = `<button class="page-btn" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? "disabled" : ""}>‹ Prev</button>`;
+            for (let i = 1; i <= Math.min(totalPages, 5); i++) {
+                pagesHtml += `<button class="page-btn ${i === currentPage ? "active" : ""}" onclick="changePage(${i})">${i}</button>`;
+            }
+            if (totalPages > 5) pagesHtml += `<span style="padding: 0 8px;">...</span><button class="page-btn" onclick="changePage(${totalPages})">${totalPages}</button>`;
+            pagesHtml += `<button class="page-btn" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? "disabled" : ""}>Next ›</button>`;
+            document.getElementById("pagination").innerHTML = pagesHtml;
+        }
+
+        function changePage(page) {
+            if (page < 1) return;
+            currentPage = page;
+            renderArticles();
+            window.scrollTo({ top: 400, behavior: 'smooth' });
+        }
+
+        function openArticleModal(articleId) {
+            const article = articles.find(a => a.id === articleId);
+            if (!article) return;
+            
+            document.getElementById("modalTitle").textContent = article.title;
+            document.getElementById("modalBody").innerHTML = `
+                <div class="article-full">
+                    <div class="article-meta">
+                        <span><i class="fas fa-user"></i> ${escapeHtml(article.author)}</span>
+                        <span><i class="fas fa-calendar"></i> ${formatDate(article.publishDate)}</span>
+                        <span><i class="fas fa-clock"></i> ${article.readTime} min read</span>
+                    </div>
+                    <img src="${article.featuredImage || 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800'}" class="featured-image" alt="${escapeHtml(article.title)}">
+                    <div class="article-body">
+                        ${article.bodyHTML || '<p>Full content coming soon.</p>'}
+                    </div>
+                    <div class="author-bio">
+                        <img src="${article.authorAvatar || 'https://i.postimg.cc/FFdCJ8BZ/Emmanuel-Brayson-Mushi.png'}" alt="${escapeHtml(article.author)}">
+                        <div>
+                            <strong>${escapeHtml(article.author)}</strong><br>
+                            ${article.authorBio || "Contributor at RotorFiles Foundation"}
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById("articleModal").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            document.getElementById("articleModal").classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+        
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Search and Filter
+        document.getElementById("searchInput").addEventListener("input", (e) => {
+            currentSearch = e.target.value.toLowerCase();
+            currentPage = 1;
+            renderArticles();
+        });
+        
+        document.querySelectorAll(".category-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                currentFilter = btn.dataset.category;
+                currentPage = 1;
+                renderArticles();
+            });
+        });
+        
+        // Modal close events
+        document.getElementById("closeModalBtn").addEventListener("click", closeModal);
+        document.getElementById("articleModal").addEventListener("click", (e) => {
+            if (e.target === document.getElementById("articleModal")) closeModal();
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+        
+        // Initialize
+        loadArticles();
+        renderArticles();
+        
+        window.changePage = changePage;
+        window.openArticleModal = openArticleModal;
+    </script>
+</body>
+</html>

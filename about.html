@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="RotorFiles Foundation is a nonprofit organization dedicated to democratizing access to knowledge, wisdom, and educational resources globally. Learn about our mission, vision, values, and founder.">
+    <meta name="keywords" content="RotorFiles, Foundation, free knowledge, nonprofit, education, mission, vision, founder, Emmanuel Brayson Mushi">
+    <meta name="author" content="RotorFiles Foundation">
+    <meta property="og:title" content="About RotorFiles Foundation | Free Knowledge. Global Impact.">
+    <meta property="og:description" content="We believe knowledge is a fundamental right. Discover our story, mission, and the people behind the movement.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.postimg.cc/wj1GPr1h/Rotor-Files-Library-look.png">
+    <meta property="og:url" content="https://rotorfiles.org/about.html">
+    <title>About RotorFiles Foundation | Free Knowledge for All</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-body: #F8F9FC;
+            --bg-surface: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #1A1F36;
+            --text-secondary: #4A5568;
+            --text-muted: #718096;
+            --text-inverse: #0A0C0F;
+            --border-light: #E2E8F0;
+            --accent-gold: #C9A03D;
+            --accent-gold-dark: #A67C2E;
+            --accent-gold-light: rgba(201, 160, 61, 0.1);
+            --accent-green: #2A9D8F;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 32px rgba(0, 0, 0, 0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 9999px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+        }
+
+        body.dark {
+            --bg-body: #0A0C0F;
+            --bg-surface: #11151A;
+            --bg-card: #161C22;
+            --bg-tertiary: #0f1419;
+            --text-primary: #F5F7FA;
+            --text-secondary: #B0B8C5;
+            --text-muted: #8A95A5;
+            --text-inverse: #F5F7FA;
+            --border-light: #232A33;
+            --accent-gold: #E8B86B;
+            --accent-gold-dark: #D4A34A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.5;
+            transition: background var(--transition-normal), color var(--transition-normal);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            transition: var(--transition-fast);
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--accent-gold);
+            color: var(--text-inverse);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .theme-toggle,
+        .mobile-menu-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            transition: var(--transition-fast);
+        }
+
+        .theme-toggle:hover,
+        .mobile-menu-btn:hover {
+            background: var(--accent-gold);
+            color: var(--text-inverse);
+            border-color: var(--accent-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* About Hero */
+        .about-hero {
+            text-align: center;
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, var(--accent-gold-light), transparent 70%);
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 70px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title span {
+            color: var(--accent-gold);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin: 1rem auto 0;
+            border-radius: 3px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 2rem 1.8rem;
+            transition: var(--transition-normal);
+            border: 1px solid var(--border-light);
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Founder Section */
+        .founder-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .founder-image {
+            flex: 1;
+            min-width: 240px;
+            text-align: center;
+        }
+
+        .founder-image img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            border: 3px solid var(--accent-gold);
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+
+        .founder-message {
+            flex: 2;
+        }
+
+        .founder-message blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1.5rem;
+            margin: 1.2rem 0;
+            color: var(--accent-gold);
+        }
+
+        .founder-sign {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        /* Impact Stats */
+        .impact-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            min-width: 170px;
+            border: 1px solid var(--border-light);
+            transition: var(--transition-fast);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Image Gallery */
+        .image-showcase {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .image-showcase img {
+            width: 280px;
+            border-radius: var(--radius-lg);
+            transition: var(--transition-fast);
+            border: 2px solid var(--accent-gold);
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .image-showcase img:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Future Card */
+        .future-card {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-tertiary));
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            text-align: center;
+            margin: 40px 0 30px;
+        }
+
+        .btn-home {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            padding: 0.9rem 2.2rem;
+            border-radius: var(--radius-full);
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: var(--transition-fast);
+            font-size: 1rem;
+        }
+
+        .btn-home:hover {
+            background: var(--accent-gold);
+            color: var(--text-inverse);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+            color: var(--text-inverse);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-gold-dark);
+            border-color: var(--accent-gold-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-light);
+            padding: 48px 0 32px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 2;
+            font-size: 0.85rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 20px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-surface);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+                z-index: 999;
+                border-bottom: 1px solid var(--border-light);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .about-hero {
+                padding: 60px 0 40px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .founder-wrapper {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            
+            .founder-message blockquote {
+                border-left: none;
+                border-top: 3px solid var(--accent-gold);
+                padding-top: 1rem;
+                text-align: center;
+                padding-left: 0;
+            }
+            
+            .cards-grid {
+                gap: 1.5rem;
+            }
+            
+            .info-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-item {
+                min-width: 140px;
+                padding: 1rem 1.2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .btn-home {
+                margin-left: 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .about-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-sub {
+                font-size: 1rem;
+            }
+            
+            .hero-description {
+                font-size: 0.95rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .info-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+                padding: 0.8rem 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.6rem;
+            }
+            
+            .image-showcase img {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <img src="https://i.postimg.cc/1tVwCzJf/logo-png.jpg" alt="RotorFiles Foundation Logo" class="logo-img" loading="lazy">
+                <div class="logo-text">
+                    <h1>RotorFiles Foundation</h1>
+                    <p>FREE WISDOM FOR ALL</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="kilimochap.html">KilimoChap</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About RotorFiles Foundation</h1>
+            <div class="hero-sub">Free Knowledge. Global Impact.</div>
+            <p class="hero-description">Democratizing education, preserving indigenous wisdom, and building a global library where every mind has a key to unlock their fullest potential.</p>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Story -->
+    <section class="section">
+        <div class="container">
+            <div class="cards-grid">
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Our Story</h3>
+                    <p>Born from the belief that knowledge silos limit human progress, RotorFiles Foundation started as a small digital archive in East Africa. Today, it's evolving into a global movement — bridging rural communities and urban scholars with free, curated, and life-changing content. From ancient manuscripts to modern agritech, we break barriers.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To remove economic, geographic, and systemic barriers to education. We provide unrestricted access to digital libraries, learning toolkits, and original wisdom resources — completely free — enabling self-empowerment for every person on the planet.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>A future where every person, regardless of background, holds the keys to personal, spiritual, and professional elevation. We envision a connected ecosystem of learners, storytellers, and change-makers shaping a wiser world.</p>
+                </div>
+            </div>
+
+            <!-- Values Card -->
+            <div style="margin-top: 2.5rem;">
+                <div class="info-card" style="text-align: center;">
+                    <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Our Values</h3>
+                    <p style="max-width: 700px; margin: 0 auto;"><strong>Knowledge Liberation</strong> · <strong>Integrity</strong> · <strong>Radical Service</strong> · <strong>Innovation</strong> · <strong>Community Co-creation</strong>. Every action we take is rooted in transparency, cultural respect, and the urgency of equitable access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Message -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Words from <span>Our Founder</span></h2>
+            <div class="founder-wrapper">
+                <div class="founder-image">
+                    <img src="https://i.postimg.cc/FFdCJ8BZ/Emmanuel-Brayson-Mushi.png" alt="Emmanuel Brayson Mushi, Founder of RotorFiles Foundation" loading="lazy">
+                    <p style="margin-top: 12px; font-weight: 600;">Emmanuel Brayson Mushi<br><span style="color: var(--accent-gold); font-size: 0.8rem;">Founder & Executive Director</span></p>
+                </div>
+                <div class="founder-message">
+                    <p>I started RotorFiles with nothing but a laptop and a conviction: <strong>wisdom shouldn't come with a price tag</strong>. Growing up, I saw brilliant minds fade because they couldn't afford a single textbook or didn't have access to mentors. This foundation is the remedy.</p>
+                    <blockquote>
+                        "Every story deserves to be told. Every person deserves access to wisdom. Every community grows when knowledge is shared freely."
+                    </blockquote>
+                    <p>Today, our team works tirelessly with volunteers, librarians, and tech partners to build a sustainable knowledge haven. We are just getting started — but the ripple is already global. Join us, because free knowledge will always be the catalyst for human dignity and progress.</p>
+                    <div class="founder-sign">— Emmanuel Brayson Mushi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our <span>Impact</span> Worldwide</h2>
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <div class="stat-number">120K+</div>
+                    <div class="stat-label">Digital Resources</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">85+</div>
+                    <div class="stat-label">Countries Reached</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">340+</div>
+                    <div class="stat-label">Community Partners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2.1M+</div>
+                    <div class="stat-label">Downloads & Views</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin: 1rem 0; color: var(--text-secondary);">From rural learning hubs to online libraries, we empower changemakers.</p>
+            
+            <div class="image-showcase">
+                <img src="https://i.postimg.cc/wj1GPr1h/Rotor-Files-Library-look.png" alt="RotorFiles digital library access in action" loading="lazy">
+                <img src="https://i.postimg.cc/1tVwCzJf/logo-png.jpg" alt="Foundation community outreach session" loading="lazy">
+                <img src="https://i.postimg.cc/FFdCJ8BZ/Emmanuel-Brayson-Mushi.png" alt="Founder with local learners" loading="lazy">
+            </div>
+
+            <div class="future-card">
+                <i class="fas fa-chart-line" style="font-size: 2.5rem; color: var(--accent-gold);"></i>
+                <h3 style="margin: 1rem 0;">Scaling for the Future</h3>
+                <p>RotorFiles is expanding beyond books — soon: documentary series, indigenous language archives, AI-assisted learning tools, and KilimoChap agri-extension. Every contribution fuels a borderless classroom.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Initiatives -->
+    <section class="section">
+        <div class="container">
+            <div class="cards-grid">
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>KilimoChap Hub</h3>
+                    <p>Specialized agricultural wisdom for smallholder farmers, translated into local dialects with practical video guides and climate-smart toolkits.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-film"></i></div>
+                    <h3>Documentary Archives</h3>
+                    <p>Preserving oral histories, cultural heritage, and untold stories through open-access documentaries and creative commons licensing.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
+                    <h3>Educator's Collective</h3>
+                    <p>Connecting teachers, professors, and self-learners with high-quality lesson plans, research papers, and micro-scholarships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Buttons -->
+    <div class="cta-buttons">
+        <div class="container">
+            <a href="index.html" class="btn-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <a href="support.html" class="btn-home btn-primary" style="margin-left: 1rem;"><i class="fas fa-hand-holding-heart"></i> Support Our Mission</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="https://i.postimg.cc/1tVwCzJf/logo-png.jpg" alt="RotorFiles" style="width: 50px; border-radius: 12px; margin-bottom: 16px;">
+                <h3 style="color: var(--accent-gold); font-size: 1.2rem;">RotorFiles Foundation</h3>
+                <p>Free Wisdom for All</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="books.html">Books</a></p>
+                <p><a href="articles.html">Articles</a></p>
+                <p><a href="kilimochap.html">KilimoChap</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="support.html">Support</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <p><i class="fas fa-phone"></i> <a href="tel:+255650222824">+255 650 222 824</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/255610222824" target="_blank">+255 610 222 824</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:emmanuelbrayson24@gmail.com">foundation@rotorfiles.org</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <p><a href="#"><i class="fab fa-twitter"></i> Twitter</a></p>
+                <p><a href="#"><i class="fab fa-facebook"></i> Facebook</a></p>
+                <p><a href="#"><i class="fab fa-instagram"></i> Instagram</a></p>
+                <p><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 RotorFiles Foundation — Free Wisdom for All. A Nonprofit Knowledge Initiative.</p>
+            <p style="margin-top: 8px;"><i class="fas fa-globe"></i> Open Knowledge · Open Future</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+        themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+    
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== "#" && href !== "#!") {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+    
+    console.log("RotorFiles About Page — Advancing free knowledge globally.");
+</script>
+</body>
+</html>
